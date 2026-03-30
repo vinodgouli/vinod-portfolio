@@ -3,18 +3,69 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vinod-Gouli-Portfolio</title>
+  <title>Vinod Gouli | Portfolio</title>
   <style>
     * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family: Arial, sans-serif; background:#0f172a; color:#fff; }
-    header { text-align:center; padding:40px; background:#1e293b; }
-    header h1 { font-size:2.5rem; }
-    header p { color:#94a3b8; }
 
-    section { padding:40px; max-width:900px; margin:auto; }
-    h2 { margin-bottom:20px; border-bottom:2px solid #38bdf8; display:inline-block; }
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0f172a, #020617);
+      color:#fff;
+      scroll-behavior: smooth;
+    }
 
-    .card { background:#1e293b; padding:20px; margin:15px 0; border-radius:10px; }
+    header {
+      text-align:center;
+      padding:60px 20px;
+      background:#1e293b;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    header h1 { font-size:2.8rem; }
+    header p { color:#94a3b8; margin-top:10px; }
+
+    nav {
+      text-align:center;
+      background:#020617;
+      padding:10px;
+      position:sticky;
+      top:0;
+    }
+
+    nav a {
+      margin:0 15px;
+      color:#38bdf8;
+      text-decoration:none;
+      font-weight:bold;
+    }
+
+    nav a:hover { color:#fff; }
+
+    section {
+      padding:60px 20px;
+      max-width:900px;
+      margin:auto;
+      animation: fadeUp 1s ease;
+    }
+
+    h2 {
+      margin-bottom:20px;
+      border-bottom:2px solid #38bdf8;
+      display:inline-block;
+    }
+
+    .card {
+      background:#1e293b;
+      padding:20px;
+      margin:15px 0;
+      border-radius:10px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    }
 
     .skills span {
       display:inline-block;
@@ -22,12 +73,45 @@
       color:#000;
       padding:8px 12px;
       margin:5px;
-      border-radius:5px;
+      border-radius:20px;
       font-size:14px;
+      transition: transform 0.3s;
+    }
+
+    .skills span:hover {
+      transform: scale(1.1);
     }
 
     a { color:#38bdf8; text-decoration:none; }
-    footer { text-align:center; padding:20px; background:#1e293b; margin-top:40px; }
+
+    button {
+      margin-top:20px;
+      padding:10px 20px;
+      border:none;
+      border-radius:5px;
+      background:#38bdf8;
+      cursor:pointer;
+      font-weight:bold;
+    }
+
+    button:hover { background:#0ea5e9; }
+
+    footer {
+      text-align:center;
+      padding:20px;
+      background:#1e293b;
+      margin-top:40px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity:0; }
+      to { opacity:1; }
+    }
+
+    @keyframes fadeUp {
+      from { opacity:0; transform:translateY(30px); }
+      to { opacity:1; transform:translateY(0); }
+    }
   </style>
 </head>
 <body>
@@ -35,14 +119,22 @@
 <header>
   <h1>Vinod Gouli</h1>
   <p>Aspiring DevOps Engineer | AWS | Docker | CI/CD</p>
+  <button onclick="scrollToSection('contact')">Hire Me</button>
 </header>
 
-<section>
+<nav>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section id="about">
   <h2>About Me</h2>
   <p>I am a passionate DevOps learner with hands-on experience in AWS, Docker, Linux, and GitHub Actions. I love building and deploying scalable applications.</p>
 </section>
 
-<section>
+<section id="skills">
   <h2>Skills</h2>
   <div class="skills">
     <span>AWS</span>
@@ -54,30 +146,46 @@
   </div>
 </section>
 
-<section>
+<section id="projects">
   <h2>Projects</h2>
 
   <div class="card">
-    <h3>AI Legal Rights Assistant</h3>
-    <p>Full-stack AI web app that explains legal rights using NLP and GPT.</p>
+    <h3>CI/CD Pipeline with GitHub Actions</h3>
+    <p>Designed and implemented a CI/CD pipeline using GitHub Actions to automate build, test, and deployment of applications to AWS. Integrated secure secrets management and reduced manual deployment effort.</p>
   </div>
 
   <div class="card">
-    <h3>Weather Monitoring System</h3>
-    <p>Real-time IoT-based weather tracking and alert system.</p>
+    <h3>Dockerized Application Deployment</h3>
+    <p>Containerized applications using Docker and deployed them on AWS EC2 instances. Built Docker images, managed containers, and ensured consistent environments across development and production.</p>
+  </div>
+
+  <div class="card">
+    <h3>AWS S3 Static Website Hosting</h3>
+    <p>Hosted a portfolio website using AWS S3 with static website hosting. Configured bucket policies, IAM permissions, and enabled public access for seamless web hosting.</p>
+  </div>
+
+  <div class="card">
+    <h3>Linux Server Setup & Automation</h3>
+    <p>Configured and managed Linux servers on AWS EC2. Automated tasks using shell scripts, handled user permissions, and installed required software packages.</p>
   </div>
 
 </section>
 
-<section>
+<section id="contact">
   <h2>Contact</h2>
   <p>Email: vinodgouli0@gmail.com</p>
-  <p>GitHub: <a href="https://github.com/vinodgouli" target="_blank">github.com/yourusername</a></p>
+  <p>GitHub: <a href="https://github.com/vinodgouli" target="_blank">github.com/vinodgouli</a></p>
 </section>
 
 <footer>
   <p>© 2026 Vinod Gouli</p>
 </footer>
+
+<script>
+  function scrollToSection(id) {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+  }
+</script>
 
 </body>
 </html>
